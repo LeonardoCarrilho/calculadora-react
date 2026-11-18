@@ -1,0 +1,53 @@
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg, #1e1f26, #31333f);
+}
+
+.calculadora {
+  width: min(100%, 340px);
+  margin-inline: auto;
+  background: #0f1015;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 50px #0008;
+}
+
+.visor {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: 110px;
+  padding: 16px 8px 20px;
+  color: #fff;
+  overflow: hidden;
+}
+.visor small { color: #8a8d9a; font-size: 1rem; }
+.visor output { font-weight: 300; word-break: break-all; text-align: right; }
+
+.teclado { display: flex; flex-wrap: wrap; gap: 12px; }
+
+button {
+  flex: 1 0 calc(25% - 12px);
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: #2b2d38;
+  color: #fff;
+  transition: filter .15s, transform .05s;
+}
+button:hover { filter: brightness(1.25); }
+button:active { transform: scale(.95); }
+button.fn { background: #a5a7b3; color: #0f1015; }
+button.op { background: #ff9f0a; }
+button.op[aria-pressed="true"] { background: #fff; color: #ff9f0a; }
+
+.credito { margin-top: 16px; text-align: center; color: #6b6e7a; font-size: .8rem; }
