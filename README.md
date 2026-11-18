@@ -2,6 +2,8 @@
 
 Calculadora com as quatro operações feita com **React (Vite)** e layout em **Flexbox**.
 
+🔗 **Ao vivo:** https://leonardocarrilho.github.io/calculadora-react/
+
 ## Funcionalidades
 - Soma, subtração, multiplicação e divisão, com operações encadeadas
 - Porcentagem, troca de sinal, apagar o último dígito e limpar tudo
