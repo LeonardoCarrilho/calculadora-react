@@ -30,9 +30,10 @@ export default function App() {
 
   return (
     <main className="calculadora">
+      <div className="marca" aria-hidden="true"><span>LC-24 · SOLAR</span><span /></div>
       <div className="visor" aria-live="polite">
         <small>{estado.operador ? `${comVirgula(estado.anterior)} ${estado.operador}` : " "}</small>
-        <output style={{ fontSize: visor.length > 9 ? "2rem" : "3rem" }}>{visor}</output>
+        <output style={{ fontSize: visor.length > 9 ? "2.1rem" : "3.2rem" }}>{visor}</output>
       </div>
       <div className="teclado">
         {TECLAS.map((t) => (
@@ -40,14 +41,14 @@ export default function App() {
             key={t}
             type="button"
             onClick={() => tecla(t)}
-            className={OPERADORES.includes(t) ? "op" : FUNCOES.includes(t) ? "fn" : ""}
+            className={t === "=" ? "igual" : OPERADORES.includes(t) ? "op" : FUNCOES.includes(t) ? "fn" : ""}
             aria-pressed={OPERADORES.includes(t) ? estado.operador === t && estado.novoNumero : undefined}
           >
             {t}
           </button>
         ))}
       </div>
-      <p className="credito">Feito por Leonardo Carrilho · funciona também pelo teclado</p>
+      <p className="credito">Feito por Leonardo Carrilho. Também funciona pelo teclado do computador.</p>
     </main>
   );
 }
